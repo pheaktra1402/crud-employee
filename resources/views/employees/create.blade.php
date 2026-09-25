@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Create Employee</h1>
-    <form action="" method="POST">
+    <form action="{{ route('employee.store') }}" method="POST">
       
         @csrf  {{--  for security--}}
         @method('post')

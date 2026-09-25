@@ -7,6 +7,32 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello</h1>
+    <h1>
+        Employee Infomation
+    </h1>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Position</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($employees as $employee)
+                    <tr>
+                        <td>{{$employee->id}}</td>
+                        <td>{{$employee->name}}</td>
+                        <td>{{$employee->age}}</td>
+                        <td>{{$employee->position}}</td>
+                        <td>{{$employee->salary}}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
