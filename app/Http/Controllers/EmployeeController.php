@@ -25,4 +25,18 @@ class EmployeeController extends Controller
         Employee::create($data);
         return redirect(route('employee.index'));
     }
+    public function edit(Employee $employee){
+        return view('employees.edit',['employee'=> $employee]);
+    }
+    public function update(Employee $employee, Request $request){
+        $data = $request->validate([
+        'name'=>'required',
+        'age'=> 'required|integer',
+        'position'=>'required|max:20',
+        'salary'=>'required|integer',
+
+        ]);
+        $employee->update( $data);
+        return redirect(route('employee.index'));
+    }
 }

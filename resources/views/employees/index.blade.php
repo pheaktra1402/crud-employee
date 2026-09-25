@@ -11,7 +11,7 @@
         Employee Infomation
     </h1>
     <div>
-        <table>
+        <table border="1">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -19,6 +19,7 @@
                     <th>Age</th>
                     <th>Position</th>
                     <th>Salary</th>
+                    <th>Update</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,6 +30,8 @@
                         <td>{{$employee->age}}</td>
                         <td>{{$employee->position}}</td>
                         <td>{{$employee->salary}}</td>
+                        <td>
+                            <a href="{{ route('employee.edit', ['employee' => $employee]) }}">Edit</a> </td>
                     </tr>
                 @endforeach
             </tbody>
