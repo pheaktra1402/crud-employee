@@ -39,4 +39,8 @@ class EmployeeController extends Controller
         $employee->update( $data);
         return redirect(route('employee.index'));
     }
+    public function destroy(Employee $employee){
+    $employee->delete();
+    return redirect(route('employee.index'));
+    }
 }

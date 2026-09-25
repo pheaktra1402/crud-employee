@@ -20,6 +20,7 @@
                     <th>Position</th>
                     <th>Salary</th>
                     <th>Update</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,7 +33,14 @@
                         <td>{{$employee->salary}}</td>
                         <td>
                             <a href="{{ route('employee.edit', ['employee' => $employee]) }}">Edit</a> </td>
-                    </tr>
+                        <td>
+                        <form action="{{route('employee.destroy',['employee'=> $employee])}}" method="post">
+                        @csrf
+                        @method('delete')
+                        <input type="submit" value="Delete"></input>
+                  </td>
+                    </form> 
+                  </tr>
                 @endforeach
             </tbody>
         </table>
